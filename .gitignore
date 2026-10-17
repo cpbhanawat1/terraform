@@ -4,3 +4,4 @@
 *.tfstate.d
 *.pem
 my-key*
+.terraform.lock.hcl
