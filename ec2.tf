@@ -37,7 +37,7 @@ resource "aws_security_group" "my-sg" {
 
 
 resource "aws_instance" "ec2" {
-    instance_type = "t2.micro"
+    instance_type = "t2.small"
     vpc_security_group_ids = [ aws_security_group.my-sg.name ]
     root_block_device {
         volume_size = 8
@@ -45,7 +45,7 @@ resource "aws_instance" "ec2" {
     }
     key_name = aws_key_pair.mykey.key_name
     tags = {
-      name = "my-ec2-2"
+      name = "prod-ec2"
 
     }
     ami = var.aws_ami
