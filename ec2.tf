@@ -36,7 +36,7 @@ resource "aws_security_group" "my-sg" {
 
 
 
-resource "aws_instance" "ec2" {
+resource "aws_instance" "ec3" {
     instance_type = "t2.small"
     vpc_security_group_ids = [ aws_security_group.my-sg.name ]
     root_block_device {
