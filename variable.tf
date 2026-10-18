@@ -3,3 +3,11 @@ variable "aws_ami" {
     type = string
   
 }
+
+
+
+variable "env" {
+    default = "prod"
+    type = string
+  
+}
