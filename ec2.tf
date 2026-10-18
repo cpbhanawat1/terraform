@@ -3,15 +3,16 @@ resource "aws_default_vpc" "default" {
 }
 
 resource "aws_key_pair" "mykey" {
-    key_name = "my-key2"
+    key_name = "${var.env}-my-key2"
     public_key = file("my-key2.pub")
+    
     
     
   
 }
 
 resource "aws_security_group" "my-sg" {
-    name = "my-sg-2"
+    name = "${var.env}-my-sg-2"
 
     ingress {
 
@@ -36,7 +37,7 @@ resource "aws_security_group" "my-sg" {
 
 
 
-resource "aws_instance" "ec3" {
+resource "aws_instance" "ec4" {
     instance_type = "t2.small"
     vpc_security_group_ids = [ aws_security_group.my-sg.name ]
     root_block_device {
